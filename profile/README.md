@@ -1,10 +1,25 @@
-# AURA — Interpretable Multimodal AI System for Chronic Urticaria Decision Support 🧑‍⚕️⚕️
+<div align="center">
 
-AURA is a **research-oriented, interpretable multimodal AI system** designed to support clinicians and medical students in **chronic urticaria risk assessment, severity evaluation, and treatment decision support**.
+# 🩺 AURA
+# Interpretable Multimodal AI System for Chronic Urticaria Decision Support
+
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![React](https://img.shields.io/badge/React-18+-61DAFB.svg?logo=react)](https://reactjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Latest-009688.svg?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C.svg?logo=pytorch)](https://pytorch.org/)
+[![License](https://img.shields.io/badge/License-Academic-green.svg)](#license)
+
+### **A research-oriented, interpretable multimodal AI system** designed to support clinicians and medical students in **chronic urticaria risk assessment, severity evaluation, and treatment decision support**.
+
+[Key Features](#key-features) • [High-Level Workflow](#high-level-workflow) • [Tech Stack](#tech-stack) • [Environment Setup](#environment-setup) • [Team](#team)
+
+---
+
+</div>
 
 The system integrates **clinical images, structured laboratory data, and free-text clinical notes** using deep learning models, and provides **explainable outputs** with a **human-in-the-loop clinician feedback mechanism**.
 
-## Key Features 📝
+## Key Features 
 
 ### ✅ 1. Risk & Severity Assessment
 - Predicts **chronic urticaria risk and severity levels** using multimodal inputs
@@ -12,9 +27,9 @@ The system integrates **clinical images, structured laboratory data, and free-te
 - Supports **control assessment** and trend analysis when longitudinal data is available
 
 ### ✅ 2. Drug-Class & Treatment Guideline Recommendation
-- Recommends **treatment steps and drug classes** aligned with clinical guidelines
-- Rule-based safety checks (e.g., contraindications, allergy flags)
-- Transparent guideline step mapping with escalation rationale
+- **Guideline-Driven Drug & Step Prediction:** Recommends treatment class and escalation step aligned with international urticaria guidelines.
+- **Clinical Safety Control:** Uses calibrated confidence, entropy, and rule-based checks to decide RECOMMEND / REVIEW / ABSTAIN.
+- **Robust Multimodal Fusion Neural Network:** Dynamically gates image, lab, and clinical inputs to reduce noise and prevent unsafe dominance.
 
 ### ✅ 3. Explainability Dashboard
 - **Visual explanations** for image-based predictions (Grad-CAM heatmaps)
@@ -36,7 +51,9 @@ Collected feedback is used for:
 
 ---
 
-## High-Level Workflow 🧩
+## High-Level Workflow 
+
+<img src="./../High_level_diagram.png" alt="system-overview">
 
 1. **Patient Data Entry**
    - Upload clinical images (optional)
@@ -44,7 +61,7 @@ Collected feedback is used for:
    - Input laboratory values (IgE, CRP, VitD, FT4, etc.)
 
 2. **Multimodal Inference**
-   - Preprocessing → Encoding → Fusion → Severity/Risk Prediction
+   - Preprocessing → Encoding → Fusion → Drug, Medical Guideline, Medicines, Severity/Risk Prediction & Confidence Score
 
 3. **Treatment Recommendation**
    - Severity output + guideline logic → treatment step & drug class
@@ -57,12 +74,13 @@ Collected feedback is used for:
 
 ---
 
-## Tech Stack 🔨
+## Tech Stack 
 
 ### Frontend
 - **React.js**
 - **Flowbite + TailwindCSS** (dark-mode UI)
 - **Recharts** (risk trends, severity visualization)
+- **Redux**
 
 ### Backend API
 - **Python FastAPI** (REST APIs)
@@ -72,7 +90,7 @@ Collected feedback is used for:
 
 ---
 
-## AI / Deep Learning Architecture (Multimodal) 🔮
+## AI / Deep Learning Architecture
 
 AURA uses a **three-branch multimodal deep learning architecture** followed by a fusion network.
 
@@ -97,6 +115,7 @@ AURA uses a **three-branch multimodal deep learning architecture** followed by a
 ### 🔗 Fusion & Prediction Head
 - Multimodal fusion (concatenation / attention-based)
 - Outputs:
+  - Drug, Medical Guideline, Medicines Prediction
   - Risk / severity classification
   - Control assessment score
   - Optional confidence estimation
@@ -129,7 +148,7 @@ AURA uses a **three-branch multimodal deep learning architecture** followed by a
 
 ---
 
-## Environment Setup 🔎
+## Environment Setup 
 
 ### 1️⃣ Clone the Repository
 ```bash
@@ -157,8 +176,7 @@ npm run dev
 ```bash
 cd backend
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-# Linux/Mac: source .venv/bin/activate
+Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -181,6 +199,12 @@ Backend API: http://localhost:8000
 ## License
 Specify license (Academic / MIT / Institutional).
 
+## Team
 
+- Gamage S S J (Lead) `https://github.com/samidisjg`
+- Nimes R H R `https://github.com/ramindu-Nimex`
+- Damnidu T W T `https://github.com/Thewa-AlienHub`
+- P Pradicksha `https://github.com/Pradi-Hub`
 
-
+## Copyright
+© 2026 AURA. All rights reserved.
