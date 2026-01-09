@@ -86,6 +86,7 @@ Collected feedback is used for:
 - **Python FastAPI** (REST APIs)
 - **Uvicorn** (ASGI server)
 - **Pydantic** (request/response validation)
+- **Spring Boot**
 - Optional **JWT-based authentication** for role control
 
 ---
